@@ -1,0 +1,26 @@
+{
+  "name": "bionic",
+  "version": "0.1.0",
+  "description": "Metric logger build service",
+  "main": "main.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anyweez/bionic.git"
+  },
+  "author": "Luke Segars (@anyweez)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anyweez/bionic/issues"
+  },
+  "homepage": "https://github.com/anyweez/bionic#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "mongodb": "^2.0.48",
+    "mongoose": "^4.2.5"
+  }
+}

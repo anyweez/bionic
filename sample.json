@@ -1,0 +1,61 @@
+{
+    "_id": 1,
+    // Information related to the account; spans across all projects.
+    "account": {
+        "name": "Luke",
+        "createdOn": DateTime(),
+        "links": {
+            "github": "https://github.com/anyweez",
+        }
+    },
+
+    // A mapping of all projects for this account. This object contains all information
+    // for each project as well so it can get pretty big.
+    "projects": {
+        "bionic": {
+            // Metric definitions.
+            "metrics": [
+                {
+                    "name": "Build speed",
+                    "description": "Time required to complete a full build.",
+                    "label": "build-speed",
+                }
+            ],
+            // Parameters that all measurements should be evaluated against.
+            "parameters": [
+                {
+                    "name": "Cores",
+                    "description": "The number of cores used to run the build.",
+                    "label": "cores",
+                    "range": {
+                        "min": 1,
+                        "max": 12,
+                    },
+                },
+            ],
+            // Actual measurements; this object will probably get large. It's keyed by
+            // different milestones.
+            "measurements": {
+                "build-speed": {
+                    // A measurement for a given metric can include a series of parameters.
+                    "branch:commit": [
+                        {
+                            "value": .587,
+                            "lastMeasured": DateTime(),
+                            "parameters": {
+                                "cores": 4,
+                            },
+                        },
+                        {
+                            "value": 1.38,
+                            "lastMeasured": DateTime(),
+                            "parameters": {
+                                "cores": 2,
+                            },
+                        },
+                    ],
+                } // end build-speed
+            } // end measurements
+        } // end bionic
+    },
+}
